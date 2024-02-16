@@ -47,5 +47,5 @@ MonoBehaviour:
   width: 200
   height: 200
   _cellViewPrefab: {fileID: 1847796566595632306, guid: 6e00910e5992cc743bb7d97439e7e8e5, type: 3}
-  _time: 0.1
+  _time: 1
   _camera: {fileID: 0}
