@@ -9,13 +9,21 @@ Conway's Game of life and other cellular automaton experiments implemented in Un
 2.  If a cell is dead, it comes to life in the next generation if it has exactly 3 live neighbors; otherwise
    it stays dead.
 
-![gif1](./Videos/gif1.gif)
+#### Random initialization
+
+![random](./Videos/random.gif)
+
+#### Glider Spaceship. Most common and first discovered spaceship.
+
+![glider](./Videos/glider.gif)
 
 To do:
 
-* Create simple visualization structure
-* Create clickable grid to draw patterns
+* ~~Create simple visualization structure~~
+* ~~Create clickable grid to draw patterns~~
+* ~~Fix bug with the rules, each grid should be a snapshot~~
 * Change alive/dead to continuous values, 0 to 10
 * Add support to different rules
 * Add support to different neighbors size and shapes
 * Fix camera and Cell size
+* Improve UI and graphics
