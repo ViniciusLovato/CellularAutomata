@@ -1,14 +1,13 @@
-﻿using System.Collections;
-using System.Linq; 
+﻿using System.Linq; 
 using UnityEngine;
 
 public class Grid
 {
-    private readonly Cell[,] _currentGrid;
-    private int _width;
-    private int _height;
+    private Cell[,] _currentGrid;
+    private readonly int _width;
+    private readonly int _height;
         
-    public Grid(int x, int y)
+    public Grid(int x, int y, int amountPercentageAlive)
     {
         _width = x;
         _height = y;
@@ -17,13 +16,15 @@ public class Grid
         {
             for (var j = 0; j < _height; j++)
             {
-                _currentGrid[i, j] = new Cell(Random.Range(0, 100) < 5);
+                _currentGrid[i, j] = new Cell(Random.Range(0, 100) < amountPercentageAlive);
             }
         }
     }
 
     public void ApplyRules()
     {
+        var newGrid = new Cell[_width, _height];
+        
         for (var x = 0; x < _width; x++)
         {
             for (var y = 0; y < _height; y++)
@@ -45,15 +46,21 @@ public class Grid
 
                 if (cell.IsAlive())
                 {
-                    cell.SetStatus(aliveNeighbors is 2 or 3);
+                    newGrid[x, y] = new Cell(aliveNeighbors is 2 or 3);
+                    
                 }
                 else if (!cell.IsAlive())
                 {
-                    cell.SetStatus( aliveNeighbors == 3);
+                    newGrid[x, y] = new Cell(aliveNeighbors == 3);
                 }
             }
         }
+
+        _currentGrid = newGrid;
     }
+
+    public void SetCellStatus(int x, int y, bool isAlive) => _currentGrid[x, y].SetStatus(isAlive);
+
 
     public Cell[,] GetCells() => _currentGrid;
     

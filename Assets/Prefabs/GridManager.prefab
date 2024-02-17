@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec6599424fb8e469ec22eaf4f4f69b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 200
-  height: 200
+  width: 160
+  height: 90
   _cellViewPrefab: {fileID: 1847796566595632306, guid: 6e00910e5992cc743bb7d97439e7e8e5, type: 3}
-  _time: 1
+  _time: 0.1
   _camera: {fileID: 0}
